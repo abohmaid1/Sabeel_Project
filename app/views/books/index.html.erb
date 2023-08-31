@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="container grid">
+<h1>Books</h1>
+
+<div id="books">
+  <% @books.each do |book| %>
+  <% if current_user.id === book.user_id %>
+    <%= render book %>
+    <p>
+      <%= link_to "Show this book", book %>
+    </p>
+    <hr>
+  <% end %>
+  <% end %>
+</div>
+
+<%= link_to "New book", new_book_path %>
+</div>
